@@ -18,6 +18,7 @@
             goldCount = 0;
             silverCount = 0;
             bronzeCount = 0;
+            rank = 0;
         }
         customElements.define('medal-count', MedalCount);
         class MedalMent extends HTMLElement {
@@ -41,15 +42,15 @@
             </tr>
         </thead>
         <tbody itemprop=list>
-            <template 🧑‍🤝‍🧑=medal-ment>
-                <tr aria-rowindex=>
+            <template 🧑‍🤝‍🧑=medal-count>
+                <tr -s=aria-rowindex>
                     <td itemprop=team></td>
                     <td itemprop=goldCount></td>
                     <td itemprop=silverCount></td>
                     <td itemprop=bronzeCount></td>
                 </tr>
                 <t 🎚️="on when isExpanded">
-                    <tr aria-rowindex=>
+                    <tr -s=aria-rowindex>
                         <td colspan=4>
                             <medal-ment itemscope></medal-element>
                         </td>
