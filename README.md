@@ -29,10 +29,10 @@ export interface Medal{
         <td itemprop=silverCount></td>
         <td itemprop=bronzeCount></td>
     </tr>
-    <template 🎚️="on when isExpanded">
+    <template blow-dry 🎚️="on when isExpanded">
         <tr>
             <td colspan=4>
-                <medal-element></medal-element>
+                <medal-element itemscope></medal-element>
             </td>
         </tr>
     </template>
@@ -54,3 +54,5 @@ export interface Medal{
     </tbody>
 </table>
 ```
+
+[TODO]

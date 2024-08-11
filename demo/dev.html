@@ -11,7 +11,18 @@
 
 <template id=medals-detail-row>
 </template>
-
+<style>
+    template.test {
+        display: table-row;
+    }
+    meta.test{
+        display: table-cell;
+        
+    }
+    meta.test::after {
+        content: 'hello'
+    }
+</style>
 <table itemscope=medal-list>
     <caption>Medal List Summer 2024</caption>
     <thead>
@@ -23,6 +34,10 @@
         </tr>
     </thead>
     <tbody 🧑‍🤝‍🧑-ish=medal-element href="#medals-parent-row #medals-detail-row" >
+        <template class=test>
+            <div>i am here</div>
+            <meta aria-colindex=1 class=test content="test-content">
+        </template>
     </tbody>
 </table>
 </body>
