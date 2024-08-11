@@ -6,39 +6,50 @@
     <title>Document</title>
 </head>
 <body>
-    <template id=medals-parent-row>
-</template>
+    <script>
+        //@ts-check
+        class MedalList extends HTMLElement {
+            /** @type{Array<Medal>} */
+            list;
+        }
+        customElements.define('medal-list', MyList);
+        class MedalMent extends HTMLElement {
+            isExpanded = false;
+        }
+        customElements.define('medal-ment', MedalElement);
+    </script>
+    
+    
+    
+    <table itemscope=medal-list>
+        <caption>Medal List Summer 2024</caption>
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>Gold Medals</th>
+                <th>Silver Medals</th>
+                <th>Bronze Medals</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template 🧑‍🤝‍🧑-ish=medal-ment>
+                <tr>
+                    <td itemprop=team></td>
+                    <td itemprop=goldCount></td>
+                    <td itemprop=silverCount></td>
+                    <td itemprop=bronzeCount></td>
+                </tr>
+                <t 🎚️="on when isExpanded">
+                    <tr>
+                        <td colspan=4>
+                            <medal-element itemscope></medal-element>
+                        </td>
+                    </tr>
+                </t>
+            </template>
+        </tbody>
+    </table>
 
-<template id=medals-detail-row>
-</template>
-<style>
-    template.test {
-        display: table-row;
-    }
-    meta.test{
-        display: table-cell;
-        
-    }
-    meta.test::after {
-        content: 'hello'
-    }
-</style>
-<table itemscope=medal-list>
-    <caption>Medal List Summer 2024</caption>
-    <thead>
-        <tr>
-            <th>Team</th>
-            <th>Gold Medals</th>
-            <th>Silver Medals</th>
-            <th>Bronze Medals</th>
-        </tr>
-    </thead>
-    <tbody 🧑‍🤝‍🧑-ish=medal-element href="#medals-parent-row #medals-detail-row" >
-        <template class=test>
-            <div>i am here</div>
-            <meta aria-colindex=1 class=test content="test-content">
-        </template>
-    </tbody>
-</table>
+
 </body>
 </html>

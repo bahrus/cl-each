@@ -1,4 +1,4 @@
-# cl-each (🧑🏽‍🤝‍🧑🏽)
+# cl-each (🧑🏽‍🤝‍🧑🏽) [TODO]
 
 Windows:  🪟 + "." => hol
 
@@ -16,27 +16,11 @@ export interface Medal{
         list;
     }
     customElements.define('medal-list', MyList);
-    class MedalElement extends HTMLElement {
+    class MedalMent extends HTMLElement {
         isExpanded = false;
     }
-    customElements.define('medal-element', MedalElement);
+    customElements.define('medal-ment', MedalElement);
 </script>
-
-<template id=medals-parent-row>
-    <tr>
-        <td itemprop=team></td>
-        <td itemprop=goldCount></td>
-        <td itemprop=silverCount></td>
-        <td itemprop=bronzeCount></td>
-    </tr>
-    <template blow-dry 🎚️="on when isExpanded">
-        <tr>
-            <td colspan=4>
-                <medal-element itemscope></medal-element>
-            </td>
-        </tr>
-    </template>
-</template>
 
 
 
@@ -50,7 +34,22 @@ export interface Medal{
             <th>Bronze Medals</th>
         </tr>
     </thead>
-    <tbody 🧑‍🤝‍🧑-ish=medal-element 🧑‍🤝‍🧑-src="#medals-parent-row">
+    <tbody>
+        <template 🧑‍🤝‍🧑-ish=medal-ment>
+            <tr>
+                <td itemprop=team></td>
+                <td itemprop=goldCount></td>
+                <td itemprop=silverCount></td>
+                <td itemprop=bronzeCount></td>
+            </tr>
+            <t 🎚️="on when isExpanded">
+                <tr>
+                    <td colspan=4>
+                        <medal-element itemscope></medal-element>
+                    </td>
+                </tr>
+            </t>
+        </template>
     </tbody>
 </table>
 ```
