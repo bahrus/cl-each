@@ -14,6 +14,11 @@
         customElements.define('medal-list', MyList);
         /** @implements {Medal} */
         class MedalCount extends HTMLElement {
+            static config={
+                xform:{
+                    "-o rank -s ariaRowIndex":  0
+                }
+            }
             isExpanded = false;
             goldCount = 0;
             silverCount = 0;
@@ -24,7 +29,7 @@
         class MedalMent extends HTMLElement {
             GoldWinningAthletes = [];
             SilverWinningAthletes = [];
-            BronzeWinningAthletes
+            BronzeWinningAthletes = [];
         }
         customElements.define('medal-ment', MedalMent);
     </script>
@@ -43,14 +48,14 @@
         </thead>
         <tbody itemprop=list>
             <template 🧑‍🤝‍🧑=medal-count>
-                <tr -s=aria-rowindex>
+                <tr -o=rank -s=ariaRowIndex>
                     <td itemprop=team></td>
                     <td itemprop=goldCount></td>
                     <td itemprop=silverCount></td>
                     <td itemprop=bronzeCount></td>
                 </tr>
                 <t 🎚️="on when isExpanded">
-                    <tr -s=aria-rowindex>
+                    <tr -o=rank -s=ariaRowIndex>
                         <td colspan=4>
                             <medal-ment itemscope></medal-element>
                         </td>
