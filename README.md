@@ -54,4 +54,6 @@ export interface Medal{
 </table>
 ```
 
+Here we are optionally using the "t" tag to be an abbreviation of the "template" element, only valid within a template tag.
+
 [TODO]

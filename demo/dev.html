@@ -7,16 +7,25 @@
 </head>
 <body>
     <script>
-        //@ts-check
         class MedalList extends HTMLElement {
             /** @type{Array<Medal>} */
             list;
         }
         customElements.define('medal-list', MyList);
-        class MedalMent extends HTMLElement {
+        /** @implements {Medal} */
+        class MedalCount extends HTMLElement {
             isExpanded = false;
+            goldCount = 0;
+            silverCount = 0;
+            bronzeCount = 0;
         }
-        customElements.define('medal-ment', MedalElement);
+        customElements.define('medal-count', MedalCount);
+        class MedalMent extends HTMLElement {
+            GoldWinningAthletes = [];
+            SilverWinningAthletes = [];
+            BronzeWinningAthletes
+        }
+        customElements.define('medal-ment', MedalMent);
     </script>
     
     
@@ -42,7 +51,7 @@
                 <t 🎚️="on when isExpanded">
                     <tr>
                         <td colspan=4>
-                            <medal-element itemscope></medal-element>
+                            <medal-ment itemscope></medal-element>
                         </td>
                     </tr>
                 </t>
